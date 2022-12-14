@@ -8,9 +8,11 @@ Using the application provided in your assigned repository, you will walk-throug
 1.  Fork this repository and pull down the contents to your local machine. Install the necessary dependencies need to run the application.  The package.json file has already been created and identifies the packages your repository will depend upon.
 2.  Start the server and make sure you are able to create and delete grocery items.
 
-### Step 2 - Adjust the port to respond to port on cloud instance 
+### Step 2 - Adjust the port to respond to port on cloud instance and adjust the start command in package.json
 Listed below are a few steps that will help you accomplish adding an Update button
 1.  Navigate to the app.js file and replace the statement ```const port = 3000``` with ```const port = process.env.PORT || 3000``` .  It is important to make this change so that the application server is started on a random port on the cloud. If you hard code a port number, like in all Getting Started guides, and deploy to the cloud, the specific port number may not be available. The application will never start. So it’s better to get the port number assigned by the cloud instance and start the HTTP server.
+2.  Navigage to the package.json file and change the start key/value pair to ```node app.js```. Due to nodemon being a development dependency, we want to alter this key/value pair so that our hosting server doesn't run into any issues.
+
 
 
 ### Step 3 - Push up code to your assigned GitHub Repository
